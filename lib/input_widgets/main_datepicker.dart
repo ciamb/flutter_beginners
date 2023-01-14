@@ -17,6 +17,10 @@ class MyApp extends StatefulWidget {
 class _MyApp extends State<MyApp> {
   String _myDate = '';
 
+  // Una Future è un oggetto che rappresenta un valore o un evento che verrà reso disponibile in futuro. 
+  // È utilizzato per gestire i risultati asincroni , come ad esempio le richieste di rete o l ' accesso ai file. 
+  // Quando si esegue un ' operazione asincrona , viene restituita una Future che può essere utilizzata 
+  // per recuperare il risultato una volta che l'operazione è stata completata.
   Future setDate() async {
     DateTime? picked = await showDatePicker(
         context: context,
@@ -24,6 +28,7 @@ class _MyApp extends State<MyApp> {
         firstDate: DateTime.now(),
         lastDate: DateTime(2026));
 
+    // null safety.
     if (picked != null) {
       setState(() {
         _myDate = picked.toString();
@@ -41,10 +46,12 @@ class _MyApp extends State<MyApp> {
         child: Column(children: [
           Text(_myDate),
           IconButton(
-            onPressed: setDate, 
+            onPressed: setDate,
             icon: const Icon(
-              Icons.date_range, 
-              color: Colors.pink,),)
+              Icons.date_range,
+              color: Colors.pink,
+            ),
+          )
         ]),
       ),
     );

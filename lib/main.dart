@@ -26,7 +26,7 @@ class _MyApp extends State<MyApp> {
   Widget build(BuildContext context) {
     // Lo Scaffold è un widget base di Flutter che fornisce un layout di base per il nostro applicativo ( appBar: , body: , ecc.. ).
     return Scaffold(  
-      appBar: AppBar(title: const Text('Template')),
+      appBar: AppBar(title: const Text('Applicazione di partenza')),
       body: Container(
         padding: const EdgeInsets.all(16.0),
         child: Column(children: const <Widget>[

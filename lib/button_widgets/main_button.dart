@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MaterialApp(
-    // sto dicendi al mio main di runnare una MaterialApp
-    home:
-        MyApp(), // sto dicendo che la mia home all ' apertura sarà una nuova istanza di MyApp
+    home: MyApp(),
   ));
 }
 
@@ -16,27 +14,32 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyApp extends State<MyApp> {
-  int _mycounter = 0;
-  String _mystring = '';
+  int _mycounter = 0; // Inizializzo una variabile di tipo int ( intero ).
+  String _mystring =
+      ''; // Inizializzo una variabile di tipo String ( stringa ).
 
+  // Un metodo che resetta il mio counter , riportando il valore a 0.
   void resetCounter() {
     setState(() {
       _mycounter = 0;
     });
   }
 
+  // Un metodo che aumenta il valore del mio counter di 1.
   void addCounter() {
     setState(() {
       _mycounter++;
     });
   }
 
+  // Un metodo che diminuisce il valore del mio counter di 1.
   void subtractCounter() {
     setState(() {
       _mycounter--;
     });
   }
 
+  // Un metodo che setta la mia stringa alla data di oggi.
   void showDate() {
     setState(() {
       _mystring = DateTime.now().toString();
@@ -46,22 +49,22 @@ class _MyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Template')),
+      appBar: AppBar(
+          title: const Text(
+        'I 3 principali Bottoni!',
+        style: TextStyle(fontWeight: FontWeight.bold),
+      )),
       body: Container(
         padding: const EdgeInsets.all(16.0),
         child: Column(children: <Widget>[
-
-
-
-          // primo tipo di bottone (ElevatedButton)
-          ElevatedButton( 
+          
+          // Primo tipo di bottone ( ElevatedButton ).
+          ElevatedButton(
             onPressed: resetCounter,
             child: Text('$_mycounter'),
           ),
 
-
-
-          // secondo tipo di bottone (FloatingActionButton)
+          // Secondo tipo di bottone ( FloatingActionButton ).
           FloatingActionButton(
             backgroundColor: Colors.amber,
             onPressed: showDate,
@@ -72,17 +75,9 @@ class _MyApp extends State<MyApp> {
             padding: const EdgeInsets.all(30.0),
           ),
 
-
-          // terzo tipo di bottone (IconButton)
-          IconButton(
-            onPressed: addCounter, 
-            icon: const Icon(Icons.add)),
-          IconButton(
-            onPressed: subtractCounter, 
-            icon: const Icon(Icons.remove))
-
-
-            
+          // Terzo tipo di bottone ( IconButton ).
+          IconButton(onPressed: addCounter, icon: const Icon(Icons.add)),
+          IconButton(onPressed: subtractCounter, icon: const Icon(Icons.remove))
         ]),
       ),
     );

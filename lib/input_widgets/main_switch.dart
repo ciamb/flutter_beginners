@@ -18,8 +18,10 @@ class _MyApp extends State<MyApp> {
   void changeValue(bool value) {
     setState(() {
       value1 = value;
+      print(value);
     });
   }
+
   void changeValue2(bool value) {
     setState(() {
       value2 = value;
@@ -27,10 +29,10 @@ class _MyApp extends State<MyApp> {
   }
 
   Widget makeChangeToSubtitle(bool value) {
-    if(value) {
-      return const Text('sono true');
-    } 
-    return const Text('sono false');
+    if (value) {
+      return const Text('Sono VERO :D');
+    }
+    return const Text('Sono FALSO :(');
   }
 
   @override
@@ -42,13 +44,17 @@ class _MyApp extends State<MyApp> {
       body: Center(
         child: Column(
           children: [
+            // Solamente il bottone dello switch.
             Switch(value: value1, onChanged: changeValue),
+
+            // Campo cliccabile con lo swicth.
             SwitchListTile(
               value: value2,
-              onChanged:changeValue2,
-              title: const Text('Cambia il sottotitolo'),
+              onChanged: changeValue2,
+              title: const Text('Guarda il sottotitolo cambiare!'),
               controlAffinity: ListTileControlAffinity.platform,
-              subtitle: makeChangeToSubtitle(value2),)
+              subtitle: makeChangeToSubtitle(value2),
+            )
           ],
         ),
       ),

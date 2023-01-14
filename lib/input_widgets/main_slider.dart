@@ -24,12 +24,20 @@ class _MyApp extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Slider'),
+        title: const Text('Lo Slider!'),
       ),
       body: Center(
         child: Column(children: [
+          
+          // Lo Slider è un widget che permette tramite un cursore di selezionare un valore
+          // in un dato range ( es: da 1 a 100 ).
           Text('${(value * 100).round()}'),
-          Slider(value: value, onChanged: setValue,thumbColor: Colors.pink[300], activeColor: Colors.pink[100],),
+          Slider(
+            value: value,
+            onChanged: setValue,
+            thumbColor: Colors.pink[300],
+            activeColor: Colors.pink[100],
+          ),
         ]),
       ),
     );

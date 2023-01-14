@@ -27,21 +27,17 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('il mio terzo main')),
+      appBar: AppBar(title: const Text('Finalmente il TextField!!')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
           child: Column(
             children: [
+              Text(mystring), // Il campo che viene modificato dal mio TextField.
 
-              Text(mystring), // il campo che viene modificato dal mio TextField
-
-
-              // ilTextField è un widget che mi permette di far apparire a schermo un campo editabile (tipo form) 
-              // e che al focus apre una tastiera, di cui il tipo può essere impostato tramite il campo "keyboardType: TextInputType.tipo". 
-              // A questo widget posso anche passare i campi onChanged e onSubmit dei metodi.
-              
+              // Il TextField è un widget che mi permette di far apparire a schermo un campo editabile ( tipo form ) ,
+              // e che al focus apre una tastiera , di cui il tipo può essere impostato tramite il campo "keyboardType: ".
+              // A questo widget posso anche passare ai campi onChanged e onSubmit dei metodi , che salveranno o invieranno il mio input.
               TextField(
                 decoration: const InputDecoration(
                   hintText: 'questo è l hint',
@@ -53,10 +49,9 @@ class _MyAppState extends State<MyApp> {
                 onChanged: onChange,
                 onSubmitted: onSubmit,
               )
-
-
             ],
-          ),),
+          ),
+        ),
       ),
     );
   }
