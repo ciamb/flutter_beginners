@@ -14,17 +14,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyApp extends State<MyApp> {
+
+  // Questa funzione ritorna un widget di tipo AlertDialog!
   Future showalert(BuildContext context) async {
     return showDialog(
         context: context,
         builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text('scemo chi legge 2'), 
-            actions: [
+          return AlertDialog(title: const Text('AlertDialog'), actions: [
             FloatingActionButton(
               onPressed: () => Navigator.pop(context),
               mini: true,
-              ),
+            ),
           ]);
         });
   }
@@ -32,11 +32,14 @@ class _MyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Template')),
+      appBar: AppBar(title: const Text('L\' Alert Dialog!')),
       body: Center(
         child: Column(children: [
-          const Text('qui sotto puo lanciare il tuo dialog'),
-          ElevatedButton(onPressed: () => showalert(context), child: const Text('hit me'),)
+          const Text('Qui sotto puo lanciare il tuo dialog dalla finestra'),
+          ElevatedButton(
+            onPressed: () => showalert(context),
+            child: const Text('X'),
+          )
         ]),
       ),
     );

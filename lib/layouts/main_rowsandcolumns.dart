@@ -12,7 +12,9 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyApp();
 }
 
-// come faccio a posizionare dove voglio i miei widget all' interno del mio applicativo?
+// Come faccio a posizionare dove voglio i miei widget all' interno del mio applicativo ?
+// Utilizzo i vari widget 'strutturali' a mia disposizione , come per esempio le 
+// Row(children: []) e le Column(children: []).
 
 class _MyApp extends State<MyApp> {
   TextEditingController userInsert = TextEditingController();
@@ -21,11 +23,11 @@ class _MyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Template')),
+      appBar: AppBar(title: const Text('Rows & Column finalmente!')),
       body: Container(
         padding: const EdgeInsets.all(15.0),
         child: Column(children: [
-          const Text('please login'),
+          const Text('Per favore, fai la login!'),
           Row(
             children: [
               const Text('Username: '),
@@ -39,7 +41,7 @@ class _MyApp extends State<MyApp> {
           ),
           Row(
             children: [
-              const Text('password: '),
+              const Text('Password: '),
               Expanded(
                 child: TextField(
                   controller: passwordInsert,

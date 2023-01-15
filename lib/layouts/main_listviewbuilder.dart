@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:io';
-import 'dart:async';
 import 'dart:convert';
 
 void main() {
@@ -26,6 +24,7 @@ class _MyApp extends State<MyApp> {
 
     if (response.statusCode == 200) {
       setState(() => countries = jsonDecode(response.body));
+      // ignore: avoid_print
       print('Loaded: ${countries.length}');
     }
   }
@@ -39,7 +38,7 @@ class _MyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Template')),
+      appBar: AppBar(title: const Text('ListView.builder()')),
       body: Center(
         child: Column(children: [
           const Text(

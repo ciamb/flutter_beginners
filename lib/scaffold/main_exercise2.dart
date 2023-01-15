@@ -25,7 +25,7 @@ class _MyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Template')),
+      appBar: AppBar(title: const Text('Esercizio su Scaffold')),
       drawer: Drawer(
         child: IconButton(icon: const Icon(Icons.date_range), onPressed: setMystring),
       ),

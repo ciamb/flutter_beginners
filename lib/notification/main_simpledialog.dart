@@ -21,48 +21,52 @@ class _MyApp extends State<MyApp> {
   void setString(String input) => setState(() => mystring = input);
 
   Future askuser() async {
+
+    // La funzione showDialog() che ritorna un SimpleDialog  non fa altro che mostrare a schermo una finestra
+    // a comparsa con delle scelte per l'utente.
     switch (await showDialog(
         context: context,
         builder: (BuildContext context) {
           return SimpleDialog(
-            title: const Text('zio cane devi risponne'),
+            title: const Text('Come stai oggi?'),
             children: [
               SimpleDialogOption(
-                child: const Text('SI'),
+                child: const Text('Solare :)'),
                 onPressed: () => Navigator.pop(context, Answer.yes),
               ),
               SimpleDialogOption(
-                child: const Text('no'),
+                child: const Text('Un po\' giù.'),
                 onPressed: () => Navigator.pop(context, Answer.no),
               ),
               SimpleDialogOption(
-                child: const Text('sdiocane'),
+                child: const Text('Voglio morire.'),
                 onPressed: () => Navigator.pop(context, Answer.maybe),
               ),
             ],
           );
         })) {
       case Answer.yes:
-        setString('Proprio si');
+        setString('Dajeee :D');
         break;
       case Answer.no:
-        setString('enno');
+        setString('Mi dispiace, posso fare qualcosa?');
         break;
       case Answer.maybe:
-        setString('forse forse');
+        setString('Accanna, meglio domani.');
         break;
       default:
-        setString('hai sbagliato qualcosa');
+        setString('Non hai capito come funziona...');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Template')),
+      appBar: AppBar(title: const Text('Simple Dialog, insomma.')),
       body: Center(
         child: Column(children: [
-          ElevatedButton(onPressed: askuser, child: const Text('hittamio dio cancar')),
+          ElevatedButton(
+              onPressed: askuser, child: const Text('X')),
           Text(mystring)
         ]),
       ),

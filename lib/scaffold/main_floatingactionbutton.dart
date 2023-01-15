@@ -22,14 +22,19 @@ class _MyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Floating action button'),),
+      appBar: AppBar(
+        title: const Text('Floating Action Button'),
+      ),
+
+      // Il floatingActionButton è un bottono che viene visualizzato di default nell ' angolo
+      // in basso a destra al di sopra del contesto di base.
       floatingActionButton: FloatingActionButton(
         onPressed: setValue,
         mini: true,
         backgroundColor: Colors.pinkAccent,
         elevation: 12.0,
         hoverColor: Colors.purple,
-        child: const Icon(Icons.date_range), 
+        child: const Icon(Icons.date_range),
       ),
       body: Center(
         child: Column(children: [Text(value)]),

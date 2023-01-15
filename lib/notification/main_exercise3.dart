@@ -19,12 +19,12 @@ class _MyApp extends State<MyApp> {
   void setMystring(String input) => setState(() => mystring = input);
 
   get snackbar => SnackBar(content: Text(mystring));
-  void showbar() => ScaffoldMessenger.of(context).showSnackBar(snackbar); 
+  void showbar() => ScaffoldMessenger.of(context).showSnackBar(snackbar);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Esercizio 3')),
+      appBar: AppBar(title: const Text('Esercizio 3, chiaro.')),
       body: Center(
         child: Column(children: [
           TextField(
@@ -33,10 +33,7 @@ class _MyApp extends State<MyApp> {
             controller: TextEditingController(),
             onSubmitted: setMystring,
           ),
-          ElevatedButton(
-            onPressed: showbar, 
-            child: const Text('hit me harder')
-          )
+          ElevatedButton(onPressed: showbar, child: const Text('X'))
         ]),
       ),
     );

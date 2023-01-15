@@ -48,26 +48,29 @@ class _MyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: const Text('Esercizio INPUT'),
+        ),
         body: Center(
-      child: Column(
-        children: [
-          TextField(
-            decoration: const InputDecoration(
-                hintText: 'Inserisci qui il tuo testo segreto',
-                labelText: 'questo è il laberl',
-                icon: Icon(Icons.downhill_skiing)),
-            autocorrect: true,
-            keyboardType: TextInputType.text,
-            onSubmitted: onSubmit,
-            onChanged: onChange,
+          child: Column(
+            children: [
+              TextField(
+                decoration: const InputDecoration(
+                    hintText: 'Inserisci qui il tuo testo segreto...',
+                    labelText: 'Questo è il labelText :P',
+                    icon: Icon(Icons.downhill_skiing)),
+                autocorrect: true,
+                keyboardType: TextInputType.text,
+                onSubmitted: onSubmit,
+                onChanged: onChange,
+              ),
+              ElevatedButton(
+                onPressed: setValue,
+                child: const Text('Clicca qui se devi vedere il segreto.'),
+              ),
+              showTextWidget()
+            ],
           ),
-          ElevatedButton(
-            onPressed: setValue,
-            child: const Text('clicca qui se devi vedere il testo segreto'),
-          ),
-          showTextWidget()
-        ],
-      ),
-    ));
+        ));
   }
 }

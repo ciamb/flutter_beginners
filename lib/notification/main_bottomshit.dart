@@ -15,31 +15,37 @@ class MyApp extends StatefulWidget {
 class _MyApp extends State<MyApp> {
 
   void showBottom() {
+    
+    // Questo metodo restituisce un widget come se fosse una modale , mostrato dal fondo della pagina
     showModalBottomSheet<void>(
-      context: context, 
-      // il builder è g
-      builder: (BuildContext context) { 
-        return Container(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const Text('questo è il pannello botto', style: TextStyle(color: Colors.pinkAccent, fontWeight: FontWeight.bold),),
-              ElevatedButton(onPressed: () => Navigator.pop(context), child: const Text('close'))
-            ],
-          ),
-        );
-      }
-    );
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const Text(
+                  'Il fantastico modalBottomSheet',
+                  style: TextStyle(
+                      color: Colors.pinkAccent, fontWeight: FontWeight.bold),
+                ),
+                ElevatedButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: const Text('close'))
+              ],
+            ),
+          );
+        });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Modal')),
+      appBar: AppBar(title: const Text('La funzione showModalBottomSheet!! S:')),
       body: Center(
         child: Column(children: [
-          const Text('hit me to try the modal'),
+          const Text('Cliccami forte per mostrare la modale!'),
           ElevatedButton(onPressed: showBottom, child: const Text('X'))
         ]),
       ),

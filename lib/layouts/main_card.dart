@@ -16,7 +16,7 @@ class _MyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Template')),
+      appBar: AppBar(title: const Text('Le Cards *.*')),
       body: Center(
         child: Column(children: [
           Card(
@@ -24,8 +24,8 @@ class _MyApp extends State<MyApp> {
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: const [
-                    Text('HElloo<'),
-                    Text('Hellooo222'),
+                    Text('Carta.'),
+                    Text('Uno.'),
                   ],
                 )),
           ),
@@ -34,8 +34,8 @@ class _MyApp extends State<MyApp> {
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: const [
-                    Text('HElloo<'),
-                    Text('Hellooo222'),
+                    Text('Carta.'),
+                    Text('Due.'),
                   ],
                 )),
           ),
@@ -44,8 +44,8 @@ class _MyApp extends State<MyApp> {
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: const [
-                    Text('HElloo<'),
-                    Text('Hellooo222'),
+                    Text('Carta.'),
+                    Text('Tre.'),
                   ],
                 )),
           ),

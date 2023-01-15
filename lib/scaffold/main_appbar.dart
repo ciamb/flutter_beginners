@@ -27,21 +27,24 @@ class _MyApp extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Template'),
+        title: const Text('L\' AppBar inutile'),
         shadowColor: Colors.purple[800],
         backgroundColor: Colors.pinkAccent[200],
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
+
+        // All ' interno della appBar posso includere le 'actions:' , che accetta una lista di widget
+        // nei quali posso andare ad inserire per esempio dei bottoni che al click fanno qualcosa , 
+        // in questo esempio aumentano e diminusicono un contatore
         actions: [
           IconButton(onPressed: addValue, icon: const Icon(Icons.add)),
           IconButton(onPressed: removeValue, icon: const Icon(Icons.remove))
-        ],),
+        ],
+      ),
       body: Center(
         child: Column(
-          children: [
-            Text('$value')
-          ],
+          children: [Text('$value')],
         ),
       ),
     );

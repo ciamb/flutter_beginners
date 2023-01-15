@@ -22,17 +22,24 @@ class _MyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Template')),
+      appBar: AppBar(title: const Text('Persistent Footer Button')),
+
+      // persistentFooterButtons , è una proprietà presente nella classe Scaffold in Flutter. 
+      // Consente di aggiungere dei pulsanti fissi in fondo alla schermata. 
       persistentFooterButtons: [
-        IconButton(onPressed: () => _onclick('sole'), icon: const Icon(Icons.sunny)),
-        IconButton(onPressed: () => _onclick('cuore'), icon: const Icon(Icons.heart_broken)),
-        IconButton(onPressed: () => _onclick('amore'), icon: const Icon(Icons.heart_broken_rounded)),
+        IconButton(
+            onPressed: () => _onclick('sole'), 
+            icon: const Icon(Icons.sunny)),
+        IconButton(
+            onPressed: () => _onclick('cuore'),
+            icon: const Icon(Icons.cloudy_snowing)),
+        IconButton(
+            onPressed: () => _onclick('amore'),
+            icon: const Icon(Icons.heart_broken_rounded)),
       ],
       body: Container(
         padding: const EdgeInsets.all(16.0),
-        child: Column(children: <Widget>[
-          Text(value)
-        ]),
+        child: Column(children: <Widget>[Text(value)]),
       ),
     );
   }
